@@ -1,3 +1,5 @@
+//node 元素节点 	vm ：vue实例
+// 返回编译好的html
 function Compile(node,vm){
 	if(node){
 		this.$frag = this.nodeToFragment(node,vm);
@@ -29,6 +31,7 @@ Compile.prototype = {
 				if(attr[i].nodeName == "v-model"){
 					var name = attr[i].nodeValue; //获取v-model绑定的属性名
 					node.addEventListener('input',function(e){
+						//给相应的data属性赋值，进而触发该属性的set方法
 						vm[name] = e.target.value;
 					})
 
