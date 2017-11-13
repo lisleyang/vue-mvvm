@@ -1,6 +1,6 @@
 //参数 ： vm实例  data的key   data的value
 function defineReactive(obj,key,val){
-	var deep = new Dep();
+	var dep = new Dep();
 	Object.defineProperty(obj,key,{
 		get : function(){
 			// 添加订阅者watcher到订阅者Dep

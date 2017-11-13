@@ -27,7 +27,7 @@ Compile.prototype = {
 		if(node.nodeType === 1){
 			var attr = node.attributes;
 			//解析属性
-			for(var o=0;i,attr.length;i++){
+			for(var i=0;i<attr.length;i++){
 				if(attr[i].nodeName == "v-model"){
 					var name = attr[i].nodeValue; //获取v-model绑定的属性名
 					node.addEventListener('input',function(e){
