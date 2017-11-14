@@ -1,6 +1,7 @@
 function Vue(options){
 	this.data = options.data;
 	var data = this.data;
+	// MVVM双向数据绑定在这儿
 	observe(data,this);
 	var id = options.el;
 	var dom = new Compile(document.getElementById(id),this);

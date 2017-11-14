@@ -13,6 +13,7 @@ Compile.prototype = {
 		var frag = document.createDocumentFragment();
 		var child;
 
+		// 遍历所有节点，给每个节点/每个属性 都加上双向数据绑定
 		while(child = node.firstChild){
 			self.compileElement(child,vm);
 			frag.append(child);
@@ -35,6 +36,7 @@ Compile.prototype = {
 						vm[name] = e.target.value;
 					})
 
+					// 给每个跟vue有关的属性都加上双向数据绑定
 					new Watcher(vm,node,name,'value');
 				}
 			}
@@ -44,6 +46,7 @@ Compile.prototype = {
 			if(reg.test(node.nodeValue)){
 				var name = RegExp.$1;
 				name = name.trim();
+				//给每个跟vue有关的文本（{{}}）都加上双向数据绑定
 				new Watcher(vm,node,name,'nodeValue');
 
 			}
