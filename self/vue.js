@@ -1,3 +1,9 @@
+/**
+ * 用户输入时 触发Compiler中的addEventListener,其中会执行vm[name] = el.target.value;
+ * 这时就会触发Object.defineProperty中的set方法，set方法去触发Dep中的update，进而触发watcher中的update，
+ * watcher中的update会改变视图
+ */
+
 function Vue(options){
 	let data = options.data;
 
