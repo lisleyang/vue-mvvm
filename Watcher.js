@@ -1,5 +1,6 @@
 //vm : vm , node : 当前节点 name :属性名 type : value/nodevalue
 // 一个Watcher只是对应着一个属性
+// Watcher是整个mvvm的核心
 function Watcher(vm,node,name,type){
 	Dep.target = this;
 	this.name = name;
